@@ -18,12 +18,16 @@ const changeActive = (element) => {
 }
 
 const changeContainer = () => {
-    const container = document.querySelectorAll('.container');
-    container[0].classList.remove('active');
-    const n = document.getElementsByClassName('n_selecter');
-    n[0].innerText = n_select;
-
-    container[1].classList.add('active');
+    if (n_select === 0){
+        alert("Seleccione un numero del ranking");
+    } else {
+        const container = document.querySelector('.container');
+        container.classList.remove('active');
+        const n = document.getElementsByClassName('n_selecter');
+        n[0].innerText = n_select;
+        const container2 = document.querySelector('.container-2');
+        container2.classList.add('active');
+    }
 };
 
 const init = () => {
